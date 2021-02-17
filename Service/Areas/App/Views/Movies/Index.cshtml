@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Core.Model.Movie>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Novo","Create", null, new { @class = "btn btn-primary float-right my-1" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Título
+            </th>
+            <th>
+                Classificação
+            </th>
+            <th>
+                Lançamento
+            </th>
+            <th>
+                Gênero
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Opções
+            </th>
+        </tr>
+    </thead>
+    <tbody class="table-bordered">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+
+                @if (item.ParentalGuide == 0)
+                {
+                    <td>
+                        Livre
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.DisplayFor(m => item.ParentalGuide)
+                    </td>
+                }
+
+                <td>
+                    @Convert.ToDateTime(item.Released).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Stats)
+                </td>
+                <td>
+                    <button class="btn btn-outline-info edit" value="@item.ID">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-outline-danger delete" value="@item.ID">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts{
+    <script>
+        $(".edit").click(function (event) {
+            console.log(event)
+        });
+
+        $(".delete").click(function (event) {
+            console.log(event.target.value)
+        })
+    </script>
+    }

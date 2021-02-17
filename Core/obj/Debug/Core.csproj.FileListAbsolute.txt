@@ -1,0 +1,15 @@
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\Core.dll.config
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\Core.dll
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\Core.pdb
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\EntityFramework.dll
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\EntityFramework.xml
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\obj\Debug\Core.csproj.CopyComplete
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\obj\Debug\Core.dll
+D:\Dev\github\Entrevista\Vannon\TesteVannon\Core\obj\Debug\Core.pdb
