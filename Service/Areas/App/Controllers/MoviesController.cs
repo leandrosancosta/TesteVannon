@@ -100,7 +100,7 @@ namespace Service.Areas.App.Controllers
                     Resume = movie.Resume
                 };
 
-                var ret = mb.AddMovie(model);
+                var ret = mb.Edit(model);
 
                 return RedirectToAction("Index");
             }
