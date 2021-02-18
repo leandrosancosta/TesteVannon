@@ -9,6 +9,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ID)
 
     <div class="form-row">
         <div class="form-group col-12">

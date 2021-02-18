@@ -18,7 +18,7 @@ namespace Service.Areas.App.Controllers
         }
 
         // GET: App/Movies
-        public ActionResult Index(string message)
+        public ActionResult Index()
         {
             var movies = mb.GetMovies();
             return View(movies);
@@ -55,21 +55,71 @@ namespace Service.Areas.App.Controllers
             }
         }
 
-        
+
         public ActionResult Edit(int? id)
         {
-            if(id == 0 || id == null)
+            if (id == 0 || id == null)
             {
-                return RedirectToAction("Index", 0);
+                return RedirectToAction("Index");
             }
 
-            var movie = mb.GetMovieById(id);
+            var model = mb.GetMovieById(id);
 
-            if(movie == null)
-                return RedirectToAction("Index", 0);
+            if (model == null)
+                return RedirectToAction("Index");
+
+            MovieViewModel movie = new MovieViewModel()
+            {
+                ID = model.ID,
+                Name = model.Name,
+                Gender = model.Gender,
+                Quantity = model.Quantity,
+                Released = model.Released,
+                Stats = model.Stats,
+                ParentalGuide = model.ParentalGuide,
+                Resume = model.Resume
+            };
 
             return View(movie);
         }
 
+        [HttpPost]
+        public ActionResult Edit(MovieViewModel movie)
+        {
+            try
+            {
+                Movie model = new Movie()
+                {
+                    ID = movie.ID,
+                    Name = movie.Name,
+                    Gender = movie.Gender,
+                    Quantity = movie.Quantity,
+                    Released = movie.Released,
+                    Stats = movie.Stats,
+                    ParentalGuide = movie.ParentalGuide,
+                    Resume = movie.Resume
+                };
+
+                var ret = mb.AddMovie(model);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
+        }
+
+        public bool Delete(int? id)
+        {
+            try
+            {
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

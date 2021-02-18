@@ -237,6 +237,9 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\App\Views\Movies\Edit.cshtml" />
+    <Content Include="Areas\App\Views\Customers\Index.cshtml" />
+    <Content Include="Areas\App\Views\Rents\Index.cshtml" />
+    <Content Include="Areas\App\Views\Customers\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -378,8 +381,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\App\Views\Customers\" />
-    <Folder Include="Areas\App\Views\Rents\" />
     <Folder Include="Areas\App\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

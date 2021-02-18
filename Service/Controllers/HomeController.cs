@@ -49,7 +49,7 @@ namespace Service.Controllers
         public ActionResult Index()
         {
 
-            return View();
+            return RedirectToAction("Index","Movies", new { area = "App" });
         }
     }
 }

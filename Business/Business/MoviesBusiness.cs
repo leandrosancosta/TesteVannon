@@ -26,6 +26,11 @@ namespace Business.Business
         {
             return dal.Add(model);
         }
+        
+        public Movie Edit(Movie model)
+        {
+            return dal.UpdateMovie(model);
+        }
 
         public Movie GetMovieById(int? id)
         {

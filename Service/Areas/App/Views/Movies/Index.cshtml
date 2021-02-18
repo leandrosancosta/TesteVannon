@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 @Html.ActionLink("Novo","Create", null, new { @class = "btn btn-primary float-right my-1" })
 <table class="table">
     <thead>
@@ -65,10 +66,10 @@
                     @Html.DisplayFor(m => item.Stats)
                 </td>
                 <td>
-                    <button class="btn btn-outline-info edit" value="@item.ID">
+                    <button class="btn btn-outline-info edit" onclick="toEdit(value)" value="@item.ID">
                         <i class="fa fa-pencil" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-outline-danger delete" value="@item.ID">
+                    <button class="btn btn-outline-danger delete" onclick="toDelete(value)" value="@item.ID">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                 </td>
@@ -79,12 +80,11 @@
 
 @section scripts{
     <script>
-        $(".edit").click(function (event) {
-            console.log(event)
-        });
+        function toEdit(id) {
 
-        $(".delete").click(function (event) {
-            console.log(event.target.value)
-        })
+        }
+        function toEdit(id) {
+            
+        }
     </script>
     }

@@ -1,7 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Projeto Vannon</title>
@@ -10,10 +11,39 @@
 
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        @Html.ActionLink("Vannon", "Index", "Home", null, new { @class = "navbar-brand" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            <ul class="navbar-nav navbar-right justify-content-end">
+                @if (User.Identity.GetUserName() != "")
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Alugueis", "Index", "Rents", new { area = "App" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Filmes", "Index", "Movies", new { area = "App" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Clientes", "Index", "Customers", new { area = "App" }, new { @class = "nav-link" })
+                    </li>
+                    @*<li class="nav-item">
+                        @Html.ActionLink("Filmes","Index","Movies", new { area = "App"}, new {@class="nav-link" })
+                        <a class="nav-link" href="#">Usuários</a>
+                    </li>*@
+                    <li class="nav-item">
+                        @Html.ActionLink("Sair", "Logout", "Account", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                }
+
+
+            </ul>
+
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
     </div>
