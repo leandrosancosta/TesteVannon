@@ -31,6 +31,10 @@ namespace Business.Business
         {
             return dal.UpdateMovie(model);
         }
+        public bool Delete(int id)
+        {
+            return dal.Delete(id);
+        }
 
         public Movie GetMovieById(int? id)
         {

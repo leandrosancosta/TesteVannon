@@ -110,10 +110,11 @@ namespace Service.Areas.App.Controllers
             }
         }
 
-        public bool Delete(int? id)
+        public bool Delete()
         {
             try
             {
+                //bool ret = mb.Delete((int)id);
                 return true;
             }
             catch (Exception ex)

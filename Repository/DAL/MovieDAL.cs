@@ -38,5 +38,19 @@ namespace Repository.DAL
             _context.SaveChanges();
             return model;
         }
+
+        public bool Delete(int id)
+        {
+            try
+            {
+                Movie movie = GetMovieById(id);
+                _context.Movies.Remove(movie);
+                _context.SaveChanges();
+                return true;
+            }catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

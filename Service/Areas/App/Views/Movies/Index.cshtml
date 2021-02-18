@@ -5,7 +5,7 @@
 }
 
 
-@Html.ActionLink("Novo","Create", null, new { @class = "btn btn-primary float-right my-1" })
+@Html.ActionLink("Novo", "Create", null, new { @class = "btn btn-primary float-right my-1" })
 <table class="table">
     <thead>
         <tr>
@@ -66,9 +66,8 @@
                     @Html.DisplayFor(m => item.Stats)
                 </td>
                 <td>
-                    <button class="btn btn-outline-info edit" onclick="toEdit(value)" value="@item.ID">
-                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                    </button>
+                    <a href="/app/Movies/Edit/@item.ID" class="btn btn-outline-info edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
                     <button class="btn btn-outline-danger delete" onclick="toDelete(value)" value="@item.ID">
                         <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
@@ -80,11 +79,9 @@
 
 @section scripts{
     <script>
-        function toEdit(id) {
-
-        }
-        function toEdit(id) {
+        function toDelete(value) {
             
         }
     </script>
-    }
+
+}
