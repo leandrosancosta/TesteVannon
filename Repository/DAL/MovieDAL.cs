@@ -35,6 +35,7 @@ namespace Repository.DAL
         public Movie UpdateMovie(Movie model)
         {
             _context.Entry(model).State = EntityState.Modified;
+            _context.SaveChanges();
             return model;
         }
     }
